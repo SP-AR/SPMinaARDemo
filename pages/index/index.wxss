@@ -1,21 +1,40 @@
-/**index.wxss**/
-.userinfo {
+.hint {
+  position: absolute;
+  left: 10rpx;
+  top: 10rpx;
+}
+
+.hint1 {
+  line-height: 30rpx;
+  font-size: 24rpx;
+  color: gray;
+  width: fit-content;
+}
+
+.hint2 {
+  line-height: 30rpx;
+  font-size: 24rpx;
+  color: blue;
+  width: fit-content;
+}
+
+.list-item {
+  width: 700rpx;
+  position: relative;
+  height: 120rpx;
   display: flex;
-  flex-direction: column;
   align-items: center;
+  justify-content: center;
+  border: 1px solid #ddd;
+  border-radius: 10rpx;
+  margin: 10rpx auto;
+  padding: 10rpx;
 }
 
-.userinfo-avatar {
-  width: 128rpx;
-  height: 128rpx;
-  margin: 20rpx;
-  border-radius: 50%;
-}
-
-.userinfo-nickname {
-  color: #aaa;
-}
-
-.usermotto {
-  margin-top: 200px;
+.extra-info {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin-top: 30rpx;
 }

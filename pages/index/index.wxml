@@ -1,13 +1,13 @@
-<!--index.wxml-->
-<view class="container">
-  <view class="userinfo">
-    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
-    <block wx:else>
-      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
-      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
-    </block>
-  </view>
-  <view class="usermotto">
-    <text class="user-motto">{{motto}}</text>
-  </view>
+<view>
+  <navigator class="list-item" wx:for="{{pages}}" wx:key="url" url="/pages/{{item.url}}">
+    <view class="hint">
+      <view wx:if="{{item.hint}}" class="hint1">[{{item.hint}}]</view>
+      <view wx:if="{{item.use}}" class="hint2">({{item.use}})</view>
+    </view>
+    {{item.name}}
+  </navigator>
+</view>
+<view class="extra-info">
+  <view>插件APPID：wx513725758120fb69</view>
+  <view>实际APPID：{{appid}}</view>
 </view>

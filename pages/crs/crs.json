@@ -1,0 +1,5 @@
+{
+  "usingComponents": {
+    "spar-component": "plugin://SPARPlugin/spar-component"
+  }
+}
