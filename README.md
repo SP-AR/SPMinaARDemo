@@ -3,6 +3,7 @@
 - [基础修改](#基础修改)
 - [playcanvas 项目展示](#playcanvas-项目展示)
 - [CRS 案例](#crs-demo)
+- [CLS 案例](#cls-demo)
 
 ## 基础修改
 
@@ -82,7 +83,7 @@ module.exports = {
 };
 ```
 
-1. 配置`projectUrl`、`sceneFileName`，参考[playcanvas 项目展示](#playcanvas项目展示)
+1. 配置`projectUrl`、`sceneFileName`，参考[playcanvas 项目展示](#playcanvas-项目展示)
 2. 配置`crsConfig`，进入[EasyAR 开发中心](https://portal.easyar.cn/)-云识别管理-秘钥-小程序 AR 使用
 
 | 系统对应数据子段                                 | 代码字段     |
@@ -92,3 +93,31 @@ module.exports = {
 | Cloud URLs @ Client-end (Target Recognition) URL | clientHost   |
 
 3. 配置 `targetIds`，进入[EasyAR 开发中心](https://portal.easyar.cn/)-云识别管理-识别图 查找需要识别的图，获取图片 ID，配置到 `targetIds`，此 demo 会持续请求服务知道识别匹配到`targetIds`中的图片
+
+## cls-demo
+
+1. 配置`config/clsConfig.js`如下：
+
+```js
+module.exports = {
+  clsConfig: {
+    apiKey: "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+    apiSecret:
+      "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+    ocKey: "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+    ocSecret:
+      "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+    schemaId: "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
+  },
+};
+```
+
+内容来源
+
+| 代码字段  | 查看路径                               |
+| --------- | -------------------------------------- |
+| apiKey    | EasyAR 开发中心 - API KEY - API Key    |
+| apiSecret | EasyAR 开发中心 - API KEY - API Secret |
+| ocKey     | AR 运营中心 - 访问秘钥 - Key           |
+| ocSecret  | AR 运营中心 - 访问秘钥 - Secret        |
+| schemaId  | AR 运营中心 - 选择 AR 启动方案 - ID    |
