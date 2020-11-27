@@ -1,0 +1,4 @@
+<view class="page">
+  <view class="content">背景内容</view>
+  <spar-playcanvas wx:if="{{show3d}}" class="playcanvas" wxapi="{{wxapi}}" license="{{license}}" projectUrl="{{projectUrl}}" sceneFileName="{{sceneFileName}}" loadScripts="{{loadScripts}}" loadNetworkScripts="{{loadNetworkScripts}}" bind:loadProgress="loadProgress" bind:load="load" bind:unload="unload" bind:error="error" showLoading="{{showLoading}}" cameraMode="{{cameraMode}}" customParams="{{customParams}}" />
+</view>

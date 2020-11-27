@@ -1,0 +1,5 @@
+{
+  "usingComponents": {
+    "spar-playcanvas": "plugin://SPARPlugin/spar-playcanvas"
+  }
+}

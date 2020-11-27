@@ -1,6 +1,7 @@
 {
   "pages": [
     "pages/index/index",
+    "pages/playcanvas/playcanvas",
     "pages/logs/logs"
   ],
   "window": {

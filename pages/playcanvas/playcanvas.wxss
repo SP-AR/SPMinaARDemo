@@ -1,0 +1,24 @@
+/* miniprogram/pages/crs/crs.wxss */
+.page {
+  height: 100vh;
+  background: #aaa;
+  overflow: hidden;
+}
+
+.content {
+  width: 700rpx;
+  height: 300rpx;
+  border-radius: 10rpx;
+  background: blue;
+  margin: 100rpx auto;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.3;
+}
+
+.playcanvas {
+  position: fixed;
+  top: 0;
+}
