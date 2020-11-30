@@ -2,6 +2,8 @@
   "pages": [
     "pages/index/index",
     "pages/playcanvas/playcanvas",
+    "pages/crs/crs",
+    "pages/cls/cls",
     "pages/logs/logs"
   ],
   "window": {
