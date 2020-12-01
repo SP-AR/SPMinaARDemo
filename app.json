@@ -3,6 +3,7 @@
     "pages/index/index",
     "pages/playcanvas/playcanvas",
     "pages/crs/crs",
+    "pages/crsclient/crsclient",
     "pages/cls/cls",
     "pages/logs/logs"
   ],
@@ -14,7 +15,7 @@
   },
   "plugins": {
     "SPARPlugin": {
-      "version": "1.2.2",
+      "version": "1.2.3",
       "provider": "wx513725758120fb69"
     }
   },

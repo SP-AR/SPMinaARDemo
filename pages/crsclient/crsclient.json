@@ -1,0 +1,5 @@
+{
+  "usingComponents": {
+    "spar-crsclient": "plugin://SPARPlugin/spar-crsclient"
+  }
+}

@@ -1,0 +1,9 @@
+<view style="position: relative; width: {{ cameraWidth }}; height: {{ cameraHeight }};">
+  <spar-crsclient bind:load="onLoad" bind:result="onResult" bind:lost="onLost" bind:error="onError" requestConfig="{{requestConfig}}" running="{{running}}" wxapi="{{wxapi}}" crs-config="{{ crsConfig }}" request-interval="{{ requestInterval }}" target-ids="{{ targetIds }}" setup="{{ setup }}" tearDown="{{ tearDown }}" license="{{ license }}"></spar-crsclient>
+</view>
+<button bindtap="pause">暂停</button>
+<button bindtap="resume">启动</button>
+<textarea maxlength="-1" value="{{count}}: {{result}}" placeholder="识别结果" style="width:750rpx;height:400rpx;"></textarea>
+<view>running: {{running}}</view>
+<view wx:if="{{error}}">error: {{error}}</view>
+<view style="position:absolute;z-index:111">使用devdev账号的crs识别图</view>
