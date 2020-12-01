@@ -2,7 +2,8 @@
 
 - [基础修改](#基础修改)
 - [playcanvas 项目展示](#playcanvas-项目展示)
-- [CRS 案例](#crs-demo)
+- [CRS-playcanvas 案例](#crs-demo)
+- [CRS 单组件案例](#crsclient)
 - [CLS 案例](#cls-demo)
 
 ## 基础修改
@@ -80,6 +81,7 @@ module.exports = {
     "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
     ...
   ],
+  license: '', // 许可证 内部小程序-填了会校验license
 };
 ```
 
@@ -109,6 +111,7 @@ module.exports = {
       "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
     schemaId: "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
   },
+  license: '', // 许可证 内部小程序-填了会校验license
 };
 ```
 
@@ -121,3 +124,41 @@ module.exports = {
 | ocKey     | AR 运营中心 - 访问秘钥 - Key           |
 | ocSecret  | AR 运营中心 - 访问秘钥 - Secret        |
 | schemaId  | AR 运营中心 - 选择 AR 启动方案 - ID    |
+
+## crsclient
+
+```js
+module.exports = {
+  // 用于crs识别，若不使用crs识别则无需添加该属性
+  crsConfig: {
+    accessKey: "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+    accessSecret:"xxxxxxxxxxxxxxxxxxxxxxxxxxx...",
+    clientHost: "https://xxx-xxx.xxxxxx.xxx:xxxx",
+  },
+  // 云识别管理中的识别图ID，开启扫描后会持续请求服务，直到扫描结果在 targetIds 中
+  targetIds: [ // EasyAR 开发中心-云识别管理-识别图-识别图 ID
+    "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
+    "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
+    ...
+  ],
+  requestConfig: {notracking: true}, // 请求数据配置，参考 https://help.easyar.cn/EasyAR%20CRS/api/target-search.html#%E6%90%9C%E7%B4%A2%E8%AF%86%E5%88%AB%E7%9B%AE%E6%A0%87
+  requestInterval: 2000, // 请求间隔时间，单位ms，默认0
+  license: '', // 许可证 内部小程序-填了会校验license
+};
+```
+
+1. 配置`crsConfig`，进入[EasyAR 开发中心](https://portal.easyar.cn/)-云识别管理-秘钥-小程序 AR 使用
+
+| 系统对应数据子段                                    | 代码字段      |
+| ------------------------------------------------ | ------------ |
+| Cloud Key xxxxxxxxxxxxx                          | accessKey    |
+| Cloud Secret xxxxxxxxxxx                         | accessSecret |
+| Cloud URLs @ Client-end (Target Recognition) URL | clientHost   |
+
+2. 配置 `targetIds`，进入[EasyAR 开发中心](https://portal.easyar.cn/)-云识别管理-识别图 查找需要识别的图，获取图片 ID，配置到 `targetIds`，此 demo 会持续请求服务知道识别匹配到`targetIds`中的图片
+
+3. 配置 `requestConfig` 参考[官网CRS文档-搜索识别目标](https://help.easyar.cn/EasyAR%20CRS/api/target-search.html#%E6%90%9C%E7%B4%A2%E8%AF%86%E5%88%AB%E7%9B%AE%E6%A0%87)
+
+4. `requestInterval` 可动态设置
+
+5. `license` 许可证 内部小程序-填了会校验license
