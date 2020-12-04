@@ -1,37 +1,13 @@
-<cover-view
-        wx:if="{{showScan}}"
-        style="position: absolute; right: 50rpx; top: 250rpx; width: 150rpx; text-align: center; color: white; z-index: 100;"
->
+<cover-view wx:if="{{showScan}}" style="position: absolute; right: 50rpx; top: 250rpx; width: 150rpx; text-align: center; color: white; z-index: 100;">
     识别图
 </cover-view>
-<cover-image
-        wx:if="{{showScan}}"
-        style="position: absolute; right: 50rpx; top: 50rpx; width: 150rpx; height: 200rpx; z-index: 100;"
-        src="https://mp.easyar.cn/artravel/puruan_scan_sample.jpg"
-        bind:tap="preview"
-        bind:longpress="dismiss"
-></cover-image>
-
+<cover-image wx:if="{{showScan}}" style="position: absolute; right: 50rpx; top: 50rpx; width: 150rpx; height: 200rpx; z-index: 100;" src="https://mp.easyar.cn/artravel/puruan_scan_sample.jpg" bind:tap="preview" bind:longpress="dismiss"></cover-image>
 <view style="position: relative; width: 100vw; height: 100vh; overflow: hidden;">
     <view hidden="{{!clsConfig}}" style="position: relative; width: {{ cameraWidth }}; height: {{ cameraHeight }};">
-        <clsclient
-                includePerf="{{true}}"
-                wxapi="{{wxapi}}"
-                clsConfig="{{clsConfig}}"
-
-                bind:load="onClsClientLoad"
-                bind:result="onClsClientResult"
-                bind:error="onClsClientError"
-
-                requireDeviceMotion="{{motion}}"
-
-                running="{{running}}"
-                minInterval="{{minInterval}}"/>
+        <clsclient license="{{license}}" includePerf="{{true}}" wxapi="{{wxapi}}" clsConfig="{{clsConfig}}" bind:load="onClsClientLoad" bind:result="onClsClientResult" bind:error="onClsClientError" requireDeviceMotion="{{motion}}" running="{{running}}" minInterval="{{minInterval}}" />
     </view>
-
     <button bindtap="pause">pause</button>
     <button bindtap="resume">resume</button>
-
     <view wx:if="{{result}}">{{count}}: {{result}}</view>
     <view>running: {{running}}</view>
     <view wx:if="{{error}}">error: {{error}}</view>
