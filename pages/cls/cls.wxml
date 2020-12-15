@@ -11,4 +11,5 @@
     <view wx:if="{{result}}">{{count}}: {{result}}</view>
     <view>running: {{running}}</view>
     <view wx:if="{{error}}">error: {{error}}</view>
+    <video wx:if="{{showVideo}}" style=";position:absolute;z-index:11;top:30px;left:30px;" autoplay="{{true}}" src="http://mp.easyar.cn/SPMinaARDemo/video/zwt.mp4"></video>
 </view>
