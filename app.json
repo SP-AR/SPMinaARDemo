@@ -15,7 +15,7 @@
   },
   "plugins": {
     "SPARPlugin": {
-      "version": "1.2.5",
+      "version": "1.2.13",
       "provider": "wx513725758120fb69"
     }
   },
